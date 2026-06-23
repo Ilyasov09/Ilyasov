@@ -1,4 +1,4 @@
-﻿import {
+import {
   useState, useEffect, useRef, useCallback, useMemo
 } from "react";
 import {
@@ -49,14 +49,14 @@ const T = {
     ids: ["hero","about","skills","projects","interests","timeline","contact"],
     badge: "Junior Developer",
     hi: "Salom, men",
-    name: " Ilyasov",
+    name: "Javlon Ilyasov",
     typing: ["Junior Developer","React Developer","Ilyasov","vibe coder"],
     bio: "Tashrif buyurganingiz uchun rahmat!.",
     cta1: "Loyihalarni ko'rish",
     cta2: "CV yuklab olish",
     stat1: "5+ Loyihalar", stat2: "2+ Yil", stat3: "3 Aktiv",
-    aboutLabel:"— Men haqimda", aboutTitle:"Ilyasov ",
-    p1: "Men Ilyasov , 2009-yilda O'zbekiston, Samarqand viloyati, Jomboy tumanida tug'ilganman. Dasturlashga 2023-yilda qiziqishim uyg'ondi — YouTube'da Anvar Narzullayevning Python darslarini ko'rib, birinchi kodimni yozdim. O'zim o'rganib, asta-sekin web dunyosiga o'tdim: HTML, CSS, JavaScript, va endi React.",
+    aboutLabel:"— Men haqimda", aboutTitle:"Ilyasov Javlon",
+    p1: "Men Ilyasov Javlon, 2009-yilda O'zbekiston, Samarqand viloyati, Jomboy tumanida tug'ilganman. Dasturlashga 2023-yilda qiziqishim uyg'ondi — YouTube'da Anvar Narzullayevning Python darslarini ko'rib, birinchi kodimni yozdim. O'zim o'rganib, asta-sekin web dunyosiga o'tdim: HTML, CSS, JavaScript, va endi React.",
     p2: "Hozirda IELTS uchun ingliz tilini o'rganayapman va 2027-yilda chet el universitetlariga — kiberxavfsizlik yoki CS yo'nalishida — topshirmoqchiman.",
     dekuQ: "Just be yourself",
     dekuA: "  ",
@@ -88,7 +88,7 @@ const T = {
     projects: [
       {name:"Deku AI",desc:"React va AI API bilan qurilgan aqlli assistent. Foydalanuvchilarga real vaqtda javoblar beradi va murakkab savollarni tahlil qiladi.",tech:["React","API","Vercel","TailwindCSS"],live:"https://deku-ai.vercel.app"},
       {name:"Dekuboard",desc:"Shaxsiy dashboard loyihasi — ma'lumotlar vizualizatsiyasi, tezkor kirish va zamonaviy UI bilan jihozlangan.",tech:["React","Tailwind","Vercel","TypeScript"],live:"https://dekuboard.vercel.app"},
-      {name:"Portfolio v1",desc:"Next.js bilan qurilgan shaxsiy portfolio sayti.  Ilyasovning loyihalari va ko'nikmalari haqida ma'lumot beradi va aloqa imkoniyatini taqdim etadi..",tech:["Next.js", "TypeScript", "Tailwind CSS"],live:"https://javlon07.vercel.app/"},
+      {name:"Portfolio v1",desc:"Next.js bilan qurilgan shaxsiy portfolio sayti. Javlon Ilyasovning loyihalari va ko'nikmalari haqida ma'lumot beradi va aloqa imkoniyatini taqdim etadi..",tech:["Next.js", "TypeScript", "Tailwind CSS"],live:"https://javlon.vercel.app/"},
     ],
     contactTitle:"Aloqa", contactSub:"Loyiha",
     footerSub:"Junior Developer ·  Samarqand",
@@ -138,7 +138,7 @@ const T = {
     projects: [
       {name:"Deku AI",desc:"AI-powered smart assistant built with React and AI API. Provides real-time responses and analyzes complex questions with elegant UI.",tech:["React","API","Vercel","TailwindCSS"],live:"https://deku-ai.vercel.app"},
       {name:"Dekuboard",desc:"Personal dashboard project featuring data visualization, quick access tools, and a modern dark UI. A hub for productivity and monitoring.",tech:["React","Tailwind","Vercel","TypeScript"],live:"https://dekuboard.vercel.app"},
-      {name:"Portfolio v1",desc:"Personal portfolio site built with Next.js. Provides information about Javlon Ilyasov's projects and skills, and offers a contact option.",tech:["Next.js","TypeScript","Tailwind CSS"],live:"https://javlon07.vercel.app/"},
+      {name:"Portfolio v1",desc:"Personal portfolio site built with Next.js. Provides information about Javlon Ilyasov's projects and skills, and offers a contact option.",tech:["Next.js","TypeScript","Tailwind CSS"],live:"https://javlon.vercel.app/"},
     ],
     contactTitle:"Contact", contactSub:"Project",
     footerSub:"Junior Developer · Jomboy, Samarkand",
@@ -748,9 +748,9 @@ function ProfileCard({theme}:{theme:Theme}) {
           ))}
         </div>
 
-        <div style={{fontSize:11,color:theme.textMuted,fontFamily:"var(--font-mono)"}}>
-          <WaveEmoji emoji="📍" size={13}/> Jomboy, Uzbekistan
-        </div>
+        <div style={{fontSize:11,color:CYAN,fontFamily:"var(--font-mono)",marginTop:6}}>
+  @ilyasov09
+</div>
 
         {[["top-3 left-3 border-t-2 border-l-2"],["top-3 right-3 border-t-2 border-r-2"],
           ["bottom-3 left-3 border-b-2 border-l-2"],["bottom-3 right-3 border-b-2 border-r-2"]].map((cls,i)=>(
