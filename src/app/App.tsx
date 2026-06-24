@@ -92,7 +92,7 @@ const T = {
     ],
     contactTitle:"Aloqa", contactSub:"Loyiha",
     footerSub:"Junior Developer ·  Samarqand",
-    footerCopy:"© 202 Javlon Ilyasov",
+    footerCopy:"© 2026 Javlon Ilyasov",
   },
   en: {
     nav: ["Home","About","Skills","Projects","Interests","Timeline","Contact"],
