@@ -8,9 +8,7 @@ import {
 import WaveEmoji from "./components/WaveEmoji";
 import avatar from "../assets/images/avatar.jpg";
 
-/* ══════════════════════════════════════════════════════════════════
-   CONSTANTS & TYPES
-══════════════════════════════════════════════════════════════════ */
+// --- Constants & Theme Definitions ---
 const CYAN   = "#22d3ee";
 const VIOLET = "#a78bfa";
 const PINK   = "#f472b6";
@@ -40,9 +38,7 @@ const LIGHT: Theme = {
   inputBg:"#e8eaf2", particleOpacity:0.07,
 };
 
-/* ══════════════════════════════════════════════════════════════════
-   TRANSLATIONS
-══════════════════════════════════════════════════════════════════ */
+// --- Internationalization (i18n) ---
 const T = {
   uz: {
     nav: ["Bosh sahifa","Men haqimda","Ko'nikmalar","Loyihalar","Qiziqishlar","Tarix","Aloqa"],
@@ -142,7 +138,7 @@ const T = {
     ],
     contactTitle:"Contact", contactSub:"Project",
     footerSub:"Junior Developer · Jomboy, Samarkand",
-    footerCopy:"© 202 Javlon Ilyasov",
+    footerCopy:"© 2026 Javlon Ilyasov",
   },
 } as const;
 
@@ -212,9 +208,7 @@ const PARTICLES = Array.from({length:PARTICLE_COUNT}, (_,i)=>({
   color: i%3===0 ? CYAN : i%3===1 ? VIOLET : PINK,
 }));
 
-/* ══════════════════════════════════════════════════════════════════
-   HOOKS
-══════════════════════════════════════════════════════════════════ */
+// --- Custom Hooks ---
 function useTypewriter(words: readonly string[], speed=80, pause=1800) {
   const [shown,setShown]=useState("");
   const [wi,setWi]=useState(0);
@@ -259,9 +253,7 @@ function useActiveSection(ids: readonly string[]) {
   return active;
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   PRIMITIVES
-══════════════════════════════════════════════════════════════════ */
+// --- Shared UI Primitives ---
 function GradText({children,className=""}:{children:React.ReactNode;className?:string}) {
   return <span className={`gradient-text ${className}`}>{children}</span>;
 }
@@ -328,9 +320,7 @@ function Btn({children,onClick,href,variant="solid",size="md",className="",disab
   return <button onClick={onClick} className={`${pad} ${className}`} style={st} disabled={disabled} {...handlers}>{shine}{children}</button>;
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   DARK/LIGHT TOGGLE — 3D LIGHT BURST EFFECT
-══════════════════════════════════════════════════════════════════ */
+// --- Theme Switcher ---
 function ThemeToggle({isDark,setIsDark,theme}:{isDark:boolean;setIsDark:(v:boolean)=>void;theme:Theme}) {
   const [burst,setBurst]=useState(false);
   const [burstPos,setBurstPos]=useState({x:0,y:0});
@@ -409,9 +399,7 @@ function ThemeToggle({isDark,setIsDark,theme}:{isDark:boolean;setIsDark:(v:boole
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   CUSTOM CURSOR (desktop only)
-══════════════════════════════════════════════════════════════════ */
+// --- Desktop Custom Cursor ---
 function CustomCursor() {
   const dot=useRef<HTMLDivElement>(null);
   const ring=useRef<HTMLDivElement>(null);
@@ -448,9 +436,7 @@ function CustomCursor() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   LOADING SCREEN
-══════════════════════════════════════════════════════════════════ */
+// --- Splash Loading Screen ---
 const LOAD_LINES = [
   "Initializing Portfolio...",
   "Loading Components...",
@@ -497,9 +483,7 @@ function LoadingScreen({onDone}:{onDone:()=>void}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   NAVBAR
-══════════════════════════════════════════════════════════════════ */
+// --- Desktop Navbar ---
 function Navbar({lang,setLang,isDark,setIsDark,t,theme,activeSection}:{
   lang:Lang;setLang:(l:Lang)=>void;isDark:boolean;setIsDark:(v:boolean)=>void;
   t:Tr;theme:Theme;activeSection:string;
@@ -552,9 +536,7 @@ function Navbar({lang,setLang,isDark,setIsDark,t,theme,activeSection}:{
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   BOTTOM NAV (mobile)
-══════════════════════════════════════════════════════════════════ */
+// --- Mobile Bottom Navigation ---
 const BOTTOM_NAV = [
   {icon:Home,label:"Home",id:"hero"},
   {icon:User,label:"About",id:"about"},
@@ -588,9 +570,7 @@ function BottomNav({theme,activeSection}:{theme:Theme;activeSection:string}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════════════════════════ */
+// --- Hero Section ---
 function Hero({t,theme}:{t:Tr;theme:Theme}) {
   const typed=useTypewriter(t.typing);
   return (
@@ -761,9 +741,7 @@ function ProfileCard({theme}:{theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   ABOUT
-══════════════════════════════════════════════════════════════════ */
+// --- About Section ---
 function About({t,theme}:{t:Tr;theme:Theme}) {
   return (
     <section id="about" className="py-24 px-6 md:px-12 lg:px-20" style={{background:`${theme.bgSurface}66`}}>
@@ -803,9 +781,7 @@ function About({t,theme}:{t:Tr;theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   SKILLS — with real devicon SVG icons
-══════════════════════════════════════════════════════════════════ */
+// --- Skills & Stack Section ---
 function SkillIcon({name,size=32}:{name:string;size?:number}) {
   const url=SKILL_ICON_URLS[name];
   const [errored,setErrored]=useState(false);
@@ -893,9 +869,7 @@ function Skills({t,theme}:{t:Tr;theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   PROJECTS
-══════════════════════════════════════════════════════════════════ */
+// --- Featured Projects ---
 function Projects({t,theme}:{t:Tr;theme:Theme}) {
   return (
     <section id="projects" className="py-24 px-6 md:px-12 lg:px-20" style={{background:`${theme.bgSurface}66`}}>
@@ -974,9 +948,7 @@ function ProjectCard({proj,idx,theme}:{
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   INTERESTS + SPOTIFY (2 playlists)
-══════════════════════════════════════════════════════════════════ */
+// --- Interests & Spotify Playlists ---
 function Interests({t,theme,lang}:{t:Tr;theme:Theme;lang:Lang}) {
   const [activePlaylist,setActivePlaylist]=useState(0);
 
@@ -1063,9 +1035,7 @@ function Interests({t,theme,lang}:{t:Tr;theme:Theme;lang:Lang}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   TIMELINE
-══════════════════════════════════════════════════════════════════ */
+// --- Coding Journey Timeline ---
 function Timeline({t,theme}:{t:Tr;theme:Theme}) {
   const {ref,vis}=useScrollReveal(0.1);
   return (
@@ -1107,9 +1077,7 @@ function Timeline({t,theme}:{t:Tr;theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   CONTACT
-══════════════════════════════════════════════════════════════════ */
+// --- Contact & Socials ---
 const SOCIALS=[
   {icon:<GithubSVG size={22}/>,href:LINKS.github,label:"GitHub",color:"#fff",glow:"rgba(255,255,255,0.15)"},
   {icon:<TgIcon size={22}/>,href:LINKS.telegram,label:"Telegram",color:"#2AABEE",glow:"rgba(42,171,238,0.2)"},
@@ -1170,9 +1138,7 @@ function SocialBtn({s,theme}:{s:typeof SOCIALS[0];theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════════════════════ */
+// --- Page Footer ---
 function Footer({t,theme}:{t:Tr;theme:Theme}) {
   return (
     <footer className="py-10 px-6 text-center" style={{background:theme.bgPrimary,borderTop:`1px solid ${theme.borderAccent}`}}>
@@ -1201,9 +1167,7 @@ function Footer({t,theme}:{t:Tr;theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   FAB (mobile)
-══════════════════════════════════════════════════════════════════ */
+// --- Quick Actions FAB ---
 function FAB({theme}:{theme:Theme}) {
   const [open,setOpen]=useState(false);
   return (
@@ -1232,9 +1196,7 @@ function FAB({theme}:{theme:Theme}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   SVG ICON COMPONENTS
-══════════════════════════════════════════════════════════════════ */
+// --- Brand & Social Icons ---
 function SpotifyIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{display:"inline-block",verticalAlign:"middle"}}>
@@ -1265,9 +1227,7 @@ function GithubSVG({size=22}:{size?:number}) {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   MAIN APP
-══════════════════════════════════════════════════════════════════ */
+// --- Application Root ---
 export default function App() {
   const [loading,setLoading]=useState(true);
   const [lang,setLang]=useState<Lang>("uz");
