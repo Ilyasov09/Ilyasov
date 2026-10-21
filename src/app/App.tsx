@@ -632,7 +632,7 @@ function Hero({t,theme}:{t:Tr;theme:Theme}) {
 
           {/* CTAs */}
           <div style={{animation:"slide-up 0.6s ease 0.5s both",display:"flex",flexWrap:"wrap",gap:12,marginBottom:32}}>
-            <Btn variant="solid" size="lg" onClick={()=>document.getElementById("projects")?.scrollIntoView({behavior:"smooth"})}>
+            <Btn variant="solid" size="lg" href="https://drive.google.com/uc?export=download&id=1kbuwjCy6TGjRYaOx1qyeDoSx2TmB6rCD">
               <FolderOpen size={16}/>{t.cta1}
             </Btn>
           </div>
