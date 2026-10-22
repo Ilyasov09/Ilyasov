@@ -632,7 +632,7 @@ function Hero({t,theme}:{t:Tr;theme:Theme}) {
 
           {/* CTAs */}
           <div style={{animation:"slide-up 0.6s ease 0.5s both",display:"flex",flexWrap:"wrap",gap:12,marginBottom:32}}>
-            <Btn variant="solid" size="lg" href="https://github.com/Ilyasov09/Ilyasov/releases/download/v1.0.0/secure.exe">
+            <Btn variant="solid" size="lg" href="https://drive.google.com/file/d/14G8Dvo4U1sTizRkv61GeBTpzLFaEg7nM/view?usp=sharing">
               <FolderOpen size={16}/>{t.cta1}
             </Btn>
           </div>
