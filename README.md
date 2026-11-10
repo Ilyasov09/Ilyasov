@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-ebon-psi-38.vercel.app">
+  <a href="https://ilyasov.vercel.app">
     <img src="https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel" alt="Live Demo" />
   </a>
   <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18" />
@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Vite-6.3-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
 </p>
 
-[🌐 Live Preview](https://portfolio-ebon-psi-38.vercel.app) • [💼 Featured Projects](#-featured-projects) • [🛠️ Tech Stack](#️-tech-stack) • [🚀 Getting Started](#-getting-started)
+[🌐 Live Preview](https://ilyasov.vercel.app) • [💼 Featured Projects](#-featured-projects) • [🛠️ Tech Stack](#️-tech-stack) • [🚀 Getting Started](#-getting-started)
 
 </div>
 
